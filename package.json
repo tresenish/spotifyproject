@@ -38,5 +38,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://tresenish.github.io/spotifyproject"
+  "homepage": "https://tresenish.github.io/spotifyproject",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }
