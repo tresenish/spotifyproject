@@ -1,0 +1,61 @@
+
+div.albumTotal{
+    background-color: #171717;
+    border-radius: 1.5rem;
+    width: 30%;
+    margin: 1rem;
+}
+h1.album{
+    padding: 1rem 0 0 1rem;
+    margin: 0;
+    color: white;
+}
+div.albumList{
+    display: block;
+    gap: 1rem;
+    padding: 1rem;
+}
+div.albumSingle{
+    display: block;
+    text-align: left;
+    background-color: black;
+    border-radius: 1.5rem;
+    margin: 1rem 0;
+}
+h2.album{
+    /* margin: 1rem 0rem 0rem 1rem; */
+    padding: 1rem 0rem 0rem 1rem;
+    margin: 0em;
+    font-family: "Space Grotesk", sans-serif;
+    color: white;
+}
+section.playlist{
+    display: flex;
+}
+img.album{
+    width: 8rem;
+    border-radius: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+div.tracks{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.track{
+    display: flex;
+    margin:0.3rem 0;
+}
+p.trackName{
+    color: white;
+    margin: 0;
+}
+p.trackAuthor{
+    color: grey;
+    margin: 0;
+
+}
