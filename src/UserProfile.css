@@ -15,3 +15,17 @@ img.profile{
     aspect-ratio: 1/1;
     border-radius: 1rem;
 }
+
+@media screen and (max-width: 400px) {
+    img.profile{
+        right: 0rem;
+        width: 3rem;
+    }
+  }
+p.profile{
+    color: grey;
+    margin: 0 0 0 1rem;
+}
+span.profileAttach{
+    font-size: 1.3rem;
+}

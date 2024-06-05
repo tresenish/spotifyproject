@@ -4,8 +4,16 @@ div.rightSelectedTrack{
     margin: 1rem 0 0 0;
     border-radius: 1.5rem;
     width: 30%;
+    min-width: 8rem;
     height: 105%;
 }
+@media screen and (max-width: 1000px) {
+    div.rightSelectedTrack{
+        width: 80%;
+        margin: 0 1.5rem;
+    }
+    
+  }
 h3.rightSelectedTrackH{
     color: white;
     font-family: "Varela Round", sans-serif;

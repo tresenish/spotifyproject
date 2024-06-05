@@ -5,6 +5,11 @@ div.albumTotal{
     width: 100%;
     margin: 1rem;
 }
+@media screen and (max-width: 750px) {
+    div.albumTotal{
+        margin: 0 1.5rem 3rem 1.5rem;
+    }
+}
 h1.album{
     padding: 1rem 0 0 1rem;
     margin: 0;

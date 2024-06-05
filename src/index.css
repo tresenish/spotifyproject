@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #000;
 }
+@media screen and (max-width: 1000px) {
+  :root{
+    font-size: 12px;
+  }
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
