@@ -13,6 +13,11 @@ function Searchbar({ token, onSelectTrack }) { // Accept onSelectTrack as a prop
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        if (userInput.trim() === '') {
+            return; // Prevent form submission if input is empty
+        }
+
         setSubmitted(true);
 
         try {
@@ -41,7 +46,7 @@ function Searchbar({ token, onSelectTrack }) { // Accept onSelectTrack as a prop
                 />
                 <button className='formInput' type='submit'><span className="material-symbols-outlined">search</span></button>
             </form>
-            <div className='searchResults'>
+            <div className={`searchResults ${submitted ? '' : 'hidden'}`}>
                 {searchResults.map(track => (
                     <div key={track.id} className='trackSearch'>
                         <p className='trackSearchName'>{`${track.name}\xa0-\xa0`}</p>
