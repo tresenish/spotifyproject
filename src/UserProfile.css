@@ -1,7 +1,8 @@
 h1.profile{
     display: inline-block;
-    color: white;
+    color: gray;
     margin: 2rem 2rem 2rem 2rem;
+    font-family: "Varela Round", sans-serif;
 }
 span.profile{
     color: #1ED760;
