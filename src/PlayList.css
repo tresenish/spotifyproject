@@ -7,7 +7,7 @@ div.albumTotal{
 }
 @media screen and (max-width: 750px) {
     div.albumTotal{
-        margin: 0 1.5rem 3rem 1.5rem;
+        margin: 1.5rem 1.5rem 3rem 1.5rem;
     }
 }
 h1.album{
