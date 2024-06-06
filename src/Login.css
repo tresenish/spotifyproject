@@ -31,7 +31,7 @@ button.loginButton:hover{
 }
 button.loginButton:active{
     box-shadow: 0 0 0 0 transparent;
-    top: calc(5rem + 4px);
+    top: calc(7rem + 4px);
 }
 p.loginP{
     position: absolute;
