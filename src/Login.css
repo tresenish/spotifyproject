@@ -12,7 +12,7 @@ h1.loginH{
 }
 button.loginButton{
     position: absolute;
-    top: 5rem;
+    top: 7rem;
     transform: translate(-50%, 0);
 
     background-color: #1ED760;
