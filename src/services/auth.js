@@ -1,4 +1,3 @@
-// auth.js
 import axios from 'axios';
 import queryString from 'query-string';
 
@@ -43,12 +42,6 @@ export const getToken = async (code) => {
     return response.data;
   } catch (error) {
     console.error('Error fetching the token:', error.message);
-    // if (error.response) {
-    //   console.error('Response data:', error.response.data);
-    //   console.error('Response status:', error.response.status);
-    //   console.error('Response headers:', error.response.headers);
-    // }
-    // Handle the error appropriately
     throw error; // Re-throw the error if you want to handle it further up the call stack
   }
 };

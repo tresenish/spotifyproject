@@ -1,0 +1,42 @@
+div.loginDiv{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+h1.loginH{
+    color: white;
+    font-family: "Varela Round", sans-serif;
+
+}
+button.loginButton{
+    position: absolute;
+    top: 5rem;
+    transform: translate(-50%, 0);
+
+    background-color: #1ED760;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    color: black;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 3rem;
+    border: 1px solid black;
+    box-shadow: 0px 4px 0px 0px #136931;
+    cursor: pointer;
+}
+button.loginButton:hover{
+    color: white;
+}
+button.loginButton:active{
+    box-shadow: 0 0 0 0 transparent;
+    top: calc(5rem + 4px);
+}
+p.loginP{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: grey;
+}
