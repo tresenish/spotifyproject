@@ -40,9 +40,11 @@ const Playlist = ({ token, onSelectPlaylist }) => {
     }
   };
 
-  const updatePlaylist = (playlistId) => {
-    fetchTracks(playlistId);
-  };
+  useEffect(() => {
+    if (selectedPlaylistId) {
+      fetchTracks(selectedPlaylistId);
+    }
+  }, [selectedPlaylistId]);
 
   const toggleTracksVisibility = (playlistId) => {
     setVisibleTracks((prevVisibleTracks) => ({

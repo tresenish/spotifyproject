@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 
 import Login from './Login';
 import UserProfile from './UserProfile';
 import Playlist from './PlayLists';
 import Searchbar from './Searchbar';
-import SelectedTrack from './SelectedTrack'; // Import the SelectedTrack component
+import SelectedTrack from './SelectedTrack';
 
 const App = () => {
   const [token, setToken] = useState(null);
-  const [selectedTrack, setSelectedTrack] = useState(null); // Add state for selected track
-  const [selectedPlaylist, setSelectedPlaylist] = useState(null); // Add state for selected playlist
+  const [selectedTrack, setSelectedTrack] = useState(null);
+  const [selectedPlaylist, setSelectedPlaylist] = useState(null);
 
   const handleAuthenticated = (token) => {
     setToken(token);
@@ -20,9 +20,9 @@ const App = () => {
     setSelectedTrack(track);
   };
 
-  const handleSelectPlaylist = (playlist) => {
+  const handleSelectPlaylist = useCallback((playlist) => {
     setSelectedPlaylist(playlist);
-  };
+  }, []);
 
   return (
     <div>
@@ -38,7 +38,7 @@ const App = () => {
               track={selectedTrack}
               playlist={selectedPlaylist}
               token={token}
-              onUpdatePlaylist={handleSelectPlaylist}
+              onUpdatePlaylist={() => handleSelectPlaylist(selectedPlaylist)} // Pass the update handler
             /> {/* Render SelectedTrack here */}
           </div>
         </>

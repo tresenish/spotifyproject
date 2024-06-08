@@ -27,7 +27,7 @@ const SelectedTrack = ({ track, playlist, token, onUpdatePlaylist }) => {
             );
             if (response.status === 201) {
                 alert('Track added to playlist!');
-                onUpdatePlaylist(playlist.id); // Call the function to update the playlist
+                onUpdatePlaylist(); // Call the function to update the playlist
             }
         } catch (error) {
             console.error('Error adding track to playlist:', error);
@@ -49,7 +49,11 @@ const SelectedTrack = ({ track, playlist, token, onUpdatePlaylist }) => {
             <p className='rightSelectedTrackArtist'>{track.artists.map(artist => artist.name).join(', ')}</p>
             <p className='rightSelectedTrackAlbum'>{`Album: ${track.album.name}`}</p>
             <button className='addToPlayList' onClick={handleAddition}>Add to Playlist</button>
-            {playlist && <p>Selected Playlist: {playlist.name}</p>}
+            {playlist ? (
+                <p style={{ color: '#1ED760' }}>Selected Playlist: {playlist.name}</p>
+            ) : (
+                <p style={{ color: 'red' }}>No playlist selected</p>
+            )}
         </div>
     );
 };
