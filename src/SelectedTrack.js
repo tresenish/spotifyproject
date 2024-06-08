@@ -27,7 +27,10 @@ const SelectedTrack = ({ track, playlist, token, onUpdatePlaylist }) => {
             );
             if (response.status === 201) {
                 alert('Track added to playlist!');
-                onUpdatePlaylist(); // Call the function to update the playlist
+                // Add a delay of 5 seconds before updating the playlist
+                setTimeout(() => {
+                    onUpdatePlaylist(); // Call the function to update the playlist
+                }, 5000);
             }
         } catch (error) {
             console.error('Error adding track to playlist:', error);
