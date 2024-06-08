@@ -8,7 +8,7 @@ const Playlist = ({ token, onSelectPlaylist }) => {
   const [error, setError] = useState(null);
   const [visibleTracks, setVisibleTracks] = useState({});
   const [isExpanded, setIsExpanded] = useState({});
-  const [selectedPlaylistId, setSelectedPlaylistId] = useState(null); // State to track selected playlist
+  const [selectedPlaylistId, setSelectedPlaylistId] = useState(null);
 
   useEffect(() => {
     const fetchPlaylists = async () => {
@@ -32,12 +32,16 @@ const Playlist = ({ token, onSelectPlaylist }) => {
       }));
       setVisibleTracks((prevVisibleTracks) => ({
         ...prevVisibleTracks,
-        [playlistId]: 5, // Show first 5 tracks initially
+        [playlistId]: 5,
       }));
     } catch (error) {
       console.error('Error fetching tracks:', error);
       setError('Failed to fetch tracks.');
     }
+  };
+
+  const updatePlaylist = (playlistId) => {
+    fetchTracks(playlistId);
   };
 
   const toggleTracksVisibility = (playlistId) => {
@@ -90,10 +94,10 @@ const Playlist = ({ token, onSelectPlaylist }) => {
           className='album'
           onClick={() => {
             onSelectPlaylist(playlist);
-            setSelectedPlaylistId(playlist.id); // Set selected playlist ID
+            setSelectedPlaylistId(playlist.id);
           }}
           style={{
-            color: selectedPlaylistId === playlist.id ? '#1ED760' : '#fff' // Apply color conditionally
+            color: selectedPlaylistId === playlist.id ? '#1ED760' : '#fff'
           }}
         >
           {playlist.name}

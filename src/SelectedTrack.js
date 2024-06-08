@@ -1,8 +1,8 @@
 import React from 'react';
-import { addTrackToPlaylist } from './services/spotify';
+import axios from 'axios';
 import './SelectedTrack.css';
 
-const SelectedTrack = ({ track, playlist, token }) => {
+const SelectedTrack = ({ track, playlist, token, onUpdatePlaylist }) => {
     if (!track) {
         return null;
     }
@@ -14,9 +14,20 @@ const SelectedTrack = ({ track, playlist, token }) => {
         }
 
         try {
-            const response = await addTrackToPlaylist(token, playlist.id, track.uri);
+            const response = await axios.post(
+                `https://api.spotify.com/v1/playlists/${playlist.id}/tracks`,
+                {
+                    uris: [track.uri]
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
             if (response.status === 201) {
                 alert('Track added to playlist!');
+                onUpdatePlaylist(playlist.id); // Call the function to update the playlist
             }
         } catch (error) {
             console.error('Error adding track to playlist:', error);
@@ -38,11 +49,7 @@ const SelectedTrack = ({ track, playlist, token }) => {
             <p className='rightSelectedTrackArtist'>{track.artists.map(artist => artist.name).join(', ')}</p>
             <p className='rightSelectedTrackAlbum'>{`Album: ${track.album.name}`}</p>
             <button className='addToPlayList' onClick={handleAddition}>Add to Playlist</button>
-            {playlist ? (
-                <p className='selectedPlaylistMessage'>Selected Playlist: {playlist.name}</p>
-            ) : (
-                <p className='selectedPlaylistMessage' style={{ color: 'red' }}>No playlist selected</p>
-            )}
+            {playlist && <p>Selected Playlist: {playlist.name}</p>}
         </div>
     );
 };

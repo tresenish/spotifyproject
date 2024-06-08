@@ -34,7 +34,12 @@ const App = () => {
           <div className='componentManager'>
             <Playlist id='plElem' token={token} onSelectPlaylist={handleSelectPlaylist} /> {/* Pass handler to Playlist */}
             <Searchbar id='sbElem' token={token} onSelectTrack={handleSelectTrack} /> {/* Pass handler to Searchbar */}
-            <SelectedTrack track={selectedTrack} playlist={selectedPlaylist} token={token} /> {/* Render SelectedTrack here */}
+            <SelectedTrack
+              track={selectedTrack}
+              playlist={selectedPlaylist}
+              token={token}
+              onUpdatePlaylist={handleSelectPlaylist}
+            /> {/* Render SelectedTrack here */}
           </div>
         </>
       )}
